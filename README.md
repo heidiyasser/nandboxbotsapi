@@ -44,19 +44,19 @@ UploadServer=https://<SERVER>:<PORT>/nandbox/upload/
 
 **2.Create your main class** After you created your Main class and added your main function please do the following:
 
-	1- Get instance from NandboxClient.
+1- Get instance from NandboxClient.
 
-	2- Call `connect` method and pass the following parameters to it:
+2- Call `connect` method and pass the following parameters to it:
 
-		a) `token` that you get in the previous step as String
+ a) `token` that you get in the previous step as String
 
-		b) Instance of `Nandbox.Callback()`
-		
-	 This function is used to connect to server.
- 
-	3- Implement the Nandbox.Callback() `onConnect` function and set Nandbox.Api local variable to the paramater `api` passed to 'onConnect' function.
+ b) Instance of `Nandbox.Callback()`
+			
+   This function is used to connect to server.
+	 
+3- Implement the Nandbox.Callback() `onConnect` function and set Nandbox.Api local variable to the paramater `api` passed to 'onConnect' function.
 
-	4- You can implement other necessary functions.
+4- You can implement other necessary functions.
 
  
 You can simply copy the below code snippet, replace `TOKEN` with your bot token and implement the necessary functions.
