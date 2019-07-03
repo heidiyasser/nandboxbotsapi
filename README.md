@@ -52,7 +52,7 @@ UploadServer=https://<SERVER>:<PORT>/nandbox/upload/
 
    		b) Instance of `Nandbox.Callback()`
 			
-   		This function is used to connect to server.
+   	This function is used to connect to server.
 	 
   	3- Implement the Nandbox.Callback() `onConnect` function and set Nandbox.Api local variable to the paramater `api` passed to 'onConnect' function.
 
