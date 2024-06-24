@@ -19,13 +19,13 @@ Just import  the library to your project with one of the following options:
     </dependency>
 ```
 ## Build your first bot
-After you download the library, you can easily build your bot by following the below steps:
+After you download the library, you can easily build your bot by following the below step:
 
-**1.Setup your configuration file** once you get your bot configuration data from nandbox app , copy it to a proprieties file and name it  `config.properties` then add it to the home directory of your project.
+**1.Setup your configuration file** Once you get your bot configuration data from nandbox app, copy it to a properties file and name it  `config.properties` then add it to the home directory of your project.
 
-If you don't know how to get bot configuration data and token from nandbox 
+If you don't know how to get bot configuration data and token from nandbox: 
 
-- Open your bot in nandbox app then open  top right menu and click to `Get token` .This process explained in this [video](https://www.youtube.com/watch?v=FXb6tjOuxSc&feature=youtu.be).
+- Open your bot in nandbox app then open top right menu and click `Get token`. The process is explained in this [video](https://www.youtube.com/watch?v=FXb6tjOuxSc&feature=youtu.be).
 
 
 You will get data like this:
@@ -35,27 +35,31 @@ url:wss://<SERVER>:<PORT>/nandbox/api/
 download:https://<SERVER>:<PORT>/nandbox/download/  
 upload:https://<SERVER>:<PORT>/nandbox/upload/
 ```
-save your token you will use it later and add other data to  `config.properties` in the following format :
+Save your token as you will use it later and add other data to `config.properties` in the following format:
 ``` 
 URI=wss://<SERVER>:<PORT>/nandbox/api/
 DownloadServer=https://<SERVER>:<PORT>/nandbox/download/  
 UploadServer=https://<SERVER>:<PORT>/nandbox/upload/
 ```
 
-**2.Create your main class :**  After you created your Main class and added your main function please do the following :
+**2.Create your main class** After you created your Main class and added your main function please do the following:
 
-1- Get instance from NandboxClient.
+	1- Get instance from NandboxClient.
 
-2- Call `connect` function and pass the following parameters to it :
+	2- Call `connect` method and pass the following parameters to it:
 
- a) token that you get in the prevouse step as String .
+  		a) `token` that you get in the previous step as String
+
+   		b) Instance of `Nandbox.Callback()`
+			
+   	This function is used to connect to server.
+	 
+  	3- Implement the Nandbox.Callback() `onConnect` function and set Nandbox.Api local variable to the paramater `api` passed to 'onConnect' function.
+
+  	4- You can implement other necessary functions.
+
  
- b) New Nandbox.Callback anonyomus instance and create a local Nandbox.Api variable and set it to null.
- 
- c) Implement the Nandbox.Callback() onConnect function and set Nandbox.Api local varable created in step (b) to onConnect function input parameter api .
- d) You can implment other nesseeary functions.
- 
- You can simply copy the below code snippet and replace token with your bot token and implment the nesessery functions .
+You can simply copy the below code snippet, replace `TOKEN` with your bot token and implement the necessary functions.
 
 ```java
 public class MyFirstBot {
@@ -82,9 +86,9 @@ public class MyFirstBot {
 	}
 }
 ```
-`client.connect(token, new Nandbox.Callback()`  : this method to connect to server please add your bot token  instead of `token`
 
-**3.Creating Simple Echo Bot** : below is a sample code that creating a simple echo bot that echos everything sent to it.
+**3.Creating Simple Echo Bot**: Below is a sample code for a simple bot that echos everything sent to it.
+
 ```java
 public class EchoTextMessage {
 
